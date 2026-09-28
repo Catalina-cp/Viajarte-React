@@ -1,0 +1,89 @@
+:root {
+  font-family: Arial, sans-serif;
+  color: #212529;
+  background-color: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Carrusel */
+
+#carouselViajarte img {
+  height: 500px;
+  object-fit: cover;
+}
+
+#carouselViajarte .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+/* Adaptación para pantallas pequeñas */
+
+@media (max-width: 768px) {
+  #carouselViajarte img {
+    height: 300px;
+  }
+}
+
+.producto-card {
+  transition: transform 0.3s ease;
+}
+
+.producto-card:hover {
+  transform: scale(1.03);
+}
+
+.producto-card .card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.oferta-card {
+  transition: transform 0.3s ease;
+}
+
+.oferta-card:hover {
+  transform: translateY(-5px);
+}
+
+.oferta-card .card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+.inspiracion-box {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
+
+.inspiracion-box .alert {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contacto-box {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
