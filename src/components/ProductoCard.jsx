@@ -1,4 +1,12 @@
-function ProductoCard({ producto, agregarAlCarrito }) {
+function ProductoCard({
+  producto,
+  agregarAlCarrito,
+  carrito
+}) {
+  const estaEnCarrito = carrito.some(
+    (item) => item.id === producto.id
+  );
+
   return (
     <div className="col-12 col-md-6 col-lg-4">
       <div className="card h-100 shadow producto-card">
@@ -20,6 +28,7 @@ function ProductoCard({ producto, agregarAlCarrito }) {
           </p>
 
           <div className="mt-auto mb-3">
+
             <p className="text-muted text-decoration-line-through mb-1">
               ${producto.precioNormal.toLocaleString("es-CL")}
             </p>
@@ -27,14 +36,24 @@ function ProductoCard({ producto, agregarAlCarrito }) {
             <p className="fw-bold fs-5 text-primary mb-0">
               ${producto.precioOferta.toLocaleString("es-CL")}
             </p>
+
           </div>
 
-          <button
-            className="btn btn-primary"
-            onClick={() => agregarAlCarrito(producto)}
-          >
-            Agregar al carrito
-          </button>
+          {estaEnCarrito ? (
+            <button
+              className="btn btn-success"
+              disabled
+            >
+              ✓ En el carrito
+            </button>
+          ) : (
+            <button
+              className="btn btn-primary"
+              onClick={() => agregarAlCarrito(producto)}
+            >
+              Agregar al carrito
+            </button>
+          )}
 
         </div>
       </div>
